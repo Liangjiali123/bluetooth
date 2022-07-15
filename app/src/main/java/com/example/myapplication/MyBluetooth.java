@@ -30,6 +30,7 @@ public class MyBluetooth extends AppCompatActivity {
 
         // Register for broadcasts when a device is discovered.
         IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
+
         registerReceiver(receiver, filter);
         startbluetooth();
     }
@@ -43,7 +44,7 @@ public class MyBluetooth extends AppCompatActivity {
 //           if (bluetoothAdapter == null) {
 //        // Device doesn't support Bluetooth
 //        }
-
+        // 打开蓝牙
         if (!bluetoothAdapter.isEnabled()) {
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
